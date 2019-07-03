@@ -16,10 +16,10 @@ func benchmark(b *testing.B, way int, millis int) {
 	}
 }
 
-func BenchmarkPipelineWay100(b *testing.B) { benchmark(b, 0, 100) }
-func BenchmarkPipelineWay200(b *testing.B) { benchmark(b, 0, 200) }
-func BenchmarkPipelineWay300(b *testing.B) { benchmark(b, 0, 300) }
+func BenchmarkPipelineWay20(b *testing.B)  { benchmark(b, 0, 20) }
+func BenchmarkPipelineWay70(b *testing.B)  { benchmark(b, 0, 70) }
+func BenchmarkPipelineWay120(b *testing.B) { benchmark(b, 0, 120) }
 
-func BenchmarkConcurrentWay100(b *testing.B) { benchmark(b, 0, 100) }
-func BenchmarkConcurrentWay200(b *testing.B) { benchmark(b, 0, 200) }
-func BenchmarkConcurrentWay300(b *testing.B) { benchmark(b, 0, 300) }
+func BenchmarkConcurrentWay20(b *testing.B)  { benchmark(b, 0, 20) }
+func BenchmarkConcurrentWay70(b *testing.B)  { benchmark(b, 0, 70) }
+func BenchmarkConcurrentWay120(b *testing.B) { benchmark(b, 0, 120) }
