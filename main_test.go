@@ -20,6 +20,6 @@ func BenchmarkPipelineWay20(b *testing.B)  { benchmark(b, 0, 20) }
 func BenchmarkPipelineWay70(b *testing.B)  { benchmark(b, 0, 70) }
 func BenchmarkPipelineWay120(b *testing.B) { benchmark(b, 0, 120) }
 
-func BenchmarkConcurrentWay20(b *testing.B)  { benchmark(b, 0, 20) }
-func BenchmarkConcurrentWay70(b *testing.B)  { benchmark(b, 0, 70) }
-func BenchmarkConcurrentWay120(b *testing.B) { benchmark(b, 0, 120) }
+func BenchmarkConcurrentWay20(b *testing.B)  { benchmark(b, 1, 20) }
+func BenchmarkConcurrentWay70(b *testing.B)  { benchmark(b, 1, 70) }
+func BenchmarkConcurrentWay120(b *testing.B) { benchmark(b, 1, 120) }
