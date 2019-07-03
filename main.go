@@ -110,8 +110,4 @@ func concurrentWay(count, size int, dev, mean float64) {
 	<-stage4
 }
 
-func main() {
-
-	concurrentWay(10, 1000, 10, 100)
-
-}
+func main() {}
