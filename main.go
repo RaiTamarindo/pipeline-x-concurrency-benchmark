@@ -61,53 +61,45 @@ func concurrentWay(count, size int, dev, mean float64) {
 	stage4 := make(chan []int)
 
 	go func() {
-		for i := 0; i < count; i++ {
-			if i%4 == 0 {
-				j0 := make([]int, size)
-				j1 := worker(j0, dev, mean)
-				j2 := worker(j1, dev, mean)
-				j3 := worker(j2, dev, mean)
-				worker(j3, dev, mean)
-			}
+		for i := 0; i < count; i += 4 {
+			j0 := make([]int, size)
+			j1 := worker(j0, dev, mean)
+			j2 := worker(j1, dev, mean)
+			j3 := worker(j2, dev, mean)
+			worker(j3, dev, mean)
 		}
 		close(stage1)
 	}()
 
 	go func() {
-		for i := 0; i < count; i++ {
-			if i%4 == 1 {
-				j0 := make([]int, size)
-				j1 := worker(j0, dev, mean)
-				j2 := worker(j1, dev, mean)
-				j3 := worker(j2, dev, mean)
-				worker(j3, dev, mean)
-			}
+		for i := 1; i < count; i += 4 {
+			j0 := make([]int, size)
+			j1 := worker(j0, dev, mean)
+			j2 := worker(j1, dev, mean)
+			j3 := worker(j2, dev, mean)
+			worker(j3, dev, mean)
 		}
 		close(stage2)
 	}()
 
 	go func() {
-		for i := 0; i < count; i++ {
-			if i%4 == 2 {
-				j0 := make([]int, size)
-				j1 := worker(j0, dev, mean)
-				j2 := worker(j1, dev, mean)
-				j3 := worker(j2, dev, mean)
-				worker(j3, dev, mean)
-			}
+		for i := 2; i < count; i += 4 {
+			j0 := make([]int, size)
+			j1 := worker(j0, dev, mean)
+			j2 := worker(j1, dev, mean)
+			j3 := worker(j2, dev, mean)
+			worker(j3, dev, mean)
 		}
 		close(stage3)
 	}()
 
 	go func() {
-		for i := 0; i < count; i++ {
-			if i%4 == 3 {
-				j0 := make([]int, size)
-				j1 := worker(j0, dev, mean)
-				j2 := worker(j1, dev, mean)
-				j3 := worker(j2, dev, mean)
-				worker(j3, dev, mean)
-			}
+		for i := 3; i < count; i += 4 {
+			j0 := make([]int, size)
+			j1 := worker(j0, dev, mean)
+			j2 := worker(j1, dev, mean)
+			j3 := worker(j2, dev, mean)
+			worker(j3, dev, mean)
 		}
 		close(stage4)
 	}()
