@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 	"math/rand"
 	"time"
@@ -23,13 +22,10 @@ func pipelineWay(count, size int, dev, mean float64) {
 	stage3 := make(chan []int)
 	stage4 := make(chan []int)
 
-	fmt.Println("starting pipeline")
-
 	go func() {
 		for i := 0; i < count; i++ {
 			job := make([]int, size)
 			stage1 <- worker(job[:], dev, mean)
-			fmt.Printf("stage #%d processed job size %d\n", job[0], len(job))
 		}
 		close(stage1)
 	}()
@@ -37,7 +33,6 @@ func pipelineWay(count, size int, dev, mean float64) {
 	go func() {
 		for job := range stage1 {
 			stage2 <- worker(job, dev, mean)
-			fmt.Printf("stage #%d processed job size %d\n", job[0], len(job))
 		}
 		close(stage2)
 	}()
@@ -45,7 +40,6 @@ func pipelineWay(count, size int, dev, mean float64) {
 	go func() {
 		for job := range stage2 {
 			stage3 <- worker(job, dev, mean)
-			fmt.Printf("stage #%d processed job size %d\n", job[0], len(job))
 		}
 		close(stage3)
 	}()
@@ -53,7 +47,6 @@ func pipelineWay(count, size int, dev, mean float64) {
 	go func() {
 		for job := range stage3 {
 			worker(job, dev, mean)
-			fmt.Printf("stage #%d processed job size %d\n", job[0], len(job))
 		}
 		close(stage4)
 	}()
