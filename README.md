@@ -40,11 +40,11 @@ The entire flow consists on submit the job to four stages of work, each implemen
 
 ### Results on my machine
 
-| Strategy | Work time (ms) | Execution Time (ms) | Memory (B) |
+| Strategy | Work latency (&micro;s) | Execution Time (&micro;s) | Memory (B) |
 |---|--:|--:|--:|
-| Pipeline | 20 | 2258684.82 | 829600 |
-| Pipeline | 70 | 7891670.45 | 824672 |
-| Pipeline | 120 | 13524038.71 | 823104 |
-| Concurrent | 20 | 2054195.91 | 820608 |
-| Concurrent | 70 | 7131942.47 | 819840 |
-| Concurrent | 120 | 12215083.88 | 820608 |
+| Pipeline | 20 | 9614.93 | 820093 |
+| Pipeline | 70 | 16733.49 | 820045 |
+| Pipeline | 120 | 22560.18 | 819993 |
+| Concurrent | 20 | 9969.19 | 819892 |
+| Concurrent | 70 | 15004.61 | 819840 |
+| Concurrent | 120 | 20414.59 | 819840 |
