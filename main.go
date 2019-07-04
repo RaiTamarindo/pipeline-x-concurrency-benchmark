@@ -11,7 +11,7 @@ func worker(job []int, dev, mean float64) []int {
 	for i := range job {
 		job[i]++
 	}
-	time.Sleep(timeout * time.Millisecond)
+	time.Sleep(timeout * time.Microsecond)
 
 	return job
 }

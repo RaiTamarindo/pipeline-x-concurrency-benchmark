@@ -2,10 +2,10 @@ package main
 
 import "testing"
 
-func benchmark(b *testing.B, way int, millis int) {
+func benchmark(b *testing.B, way int, micros int) {
 	var process func(count, size int, dev, mean float64)
-	mean := float64(millis)
-	dev := float64(millis) / 10
+	mean := float64(micros)
+	dev := float64(micros) / 10
 	if way == 0 {
 		process = pipelineWay
 	} else {
