@@ -42,9 +42,9 @@ The entire flow consists on submit the job to four stages of work, each implemen
 
 | Strategy | Work time (ms) | Execution Time (ms) | Memory (B) |
 |---|--:|--:|--:|
-| Pipeline | 20 | 2259802.72  | 829504 |
-| Pipeline | 70 |  7888779.38  | 821472 |
-| Pipeline | 120 |  13518403.76 | 823712 |
-| Concurrent | 20 |  2280110.63 | 820992 |
-| Concurrent | 70 | 7910958.20  | 822144 |
-| Concurrent | 120 | 13590690.06  | 820128 |
+| Pipeline | 20 | 2258684.82 | 829600 |
+| Pipeline | 70 | 7891670.45 | 824672 |
+| Pipeline | 120 | 13524038.71 | 823104 |
+| Concurrent | 20 | 2054195.91 | 820608 |
+| Concurrent | 70 | 7131942.47 | 819840 |
+| Concurrent | 120 | 12215083.88 | 820608 |
